@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteRule ^404/?$ /ASSIGNMENT2/404Error.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^ http://aws.computerstudi.es/~gc200395834/ASSIGNMENT2/404Error.php [L,R]
+
+ErrorDocument 404 http://aws.computerstudi.es/~gc200395834/ASSIGNMENT2/404Error.php
