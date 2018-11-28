@@ -13,6 +13,7 @@ $name = null;
 $work = null;
 $grade = null;
 $studentId = null;
+$logo = null;
 
 //This runs when studentid is not empty
 
@@ -61,7 +62,7 @@ if (!empty($_GET['studentId'])) {
 
 <!--This will show the student records by going on the ShowingRecord.php page -->
 <div class="jumbotron">
-<a href="ShowingRecord.php">Show Student Academics </a>
+    <h3><a href="ShowingRecord.php" class="label label-default">Show Student Academics </a></h3><br>
 <!--This is to give table some classes so that bootstrap can be applied on this and after submitting this will direct it to page AcademicInput.php-->
     <script src="js/jquery-3.3.1.min.js"></script>
 
@@ -122,14 +123,15 @@ if (!empty($_GET['studentId'])) {
     <fieldset>
         <label for="logo" class="col-md-1">Logo:</label>
         <input type="file" name="logo" id="logo"  value="<?php echo $logo; ?>"/>
+        <input type="hidden" name="logo" id="logo" value="<?php echo $logo; ?>"/>
     </fieldset>
-    <input type="hidden" name="logo" id="logo" value="<?php echo $logo; ?>"/>
 
-    }
+
+
 </div>
 
 
-    <div class="col-md-offset-1 jumbotron">
+    <div class="col-md-offset-1">
         <?php
         if (isset($logo)) {
             echo "<img src=\"img/$logo\" alt=\"Logo\" height=\"50px\" width=\"50px\" />";
