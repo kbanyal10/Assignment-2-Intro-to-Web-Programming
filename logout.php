@@ -1,4 +1,7 @@
 <?php
+
+//If user clicks on logout, this runs
+
 try {
 
     session_start();

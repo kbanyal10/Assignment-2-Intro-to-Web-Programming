@@ -13,7 +13,7 @@ require('Header.php');
 
     <div class="alert alert-info" id="message">Please create your account</div>
 
-    <form method="post" action="save-registration.php">
+    <form method="post" action="save-registration.php">//Register form
 
         <fieldset class="form-group">
 
@@ -42,7 +42,7 @@ require('Header.php');
     </form>
 </main>
 
-
+//linking scripts
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 

@@ -1,6 +1,12 @@
-# comp1006-as1
-This web application uses Php, MySql, PDO library, CSS, HTML5 and bootstrap.
-This takes input in 2 tables from user and shows if required.
-This also has a drop down box.
-This repository has all the files which are required to make a web application.
-This website is live, to see it you can go to http://aws.computerstudi.es/~gc200395834/AcademicRecords.php
+# COMP 1006 - ASSIGNMENT:2
+ACADEMIC SUCCESS
+This web application is made by using HTML, CSS, JavaScript, PHP, MySQL, 
+and PDO Libraries. This application shows the academic status od every student. We can 
+register ourselves to this website and then you can log in into it to change
+the student information. But if you are not registered then you can only 
+see the information. This uses server-side scripting and thus works on the session. 
+
+
+
+
+Its live link is http://aws.computerstudi.es/~gc200395834/ASSIGNMENT%20_%202/Homepage.php.

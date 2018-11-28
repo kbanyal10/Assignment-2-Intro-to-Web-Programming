@@ -9,6 +9,10 @@ require('Header.php');
     <h1>Log In</h1>
 
     <?php
+
+    //If login details are invalid, error is showed
+
+
     if (isset($_GET['invalid']))
     {
         echo '<div class="alert alert-danger">Invalid Login</div>';

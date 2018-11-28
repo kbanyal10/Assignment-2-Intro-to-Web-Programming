@@ -1,8 +1,9 @@
 <?php
-require('Header.php');
-require('auth.php');
+require('Header.php');//This includes the header to the page which is already coded
 
-//These are variables which will store the user data
+require('auth.php');//This connects the page to a php file "auth.php", which ends the connection when session id is empty
+
+//This stores each and every variables
 $courseName = $_POST['courseName'];
 $studentNumber = $_POST['studentNumber'];
 $name = $_POST['name'];
@@ -11,7 +12,7 @@ $grade = $_POST['grade'];
 $studentId = $_POST['studentId'];
 $logo = null;
 
-//This is validation from the server side
+ //This is validation for the client side interface, that if user doest fill any data then data will not be processed
 $yes = true;
 
  if(empty($courseName))
@@ -50,6 +51,8 @@ if(empty($logo))
     $yes= false;
 }
 
+//This is for the logo, that if image file is inserted than this will run
+
 if (isset($_FILES['logo']))
 {
     $logoFile = $_FILES['logo'];
@@ -64,11 +67,14 @@ if (isset($_FILES['logo']))
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $fileType = finfo_file($finfo, $logoFile['tmp_name']);
 
+            //Only .jpeg or .png file are accepted as an image format
 
         if (($fileType != "image/jpeg") && ($fileType != "image/png")) {
             echo 'Please upload a valid JPG or PNG logo<br />';
             $yes = false;
         }
+
+        //This moves the cached images to desired location
         else
             {
 
@@ -78,20 +84,25 @@ if (isset($_FILES['logo']))
     $yes=true;
 }
 
-//If everything is filled than it will connects to the database
+//If every field is filled than it connects the page to database
 if($yes)
 
 {
+    //If everything works fine than try statement will run, otherwise the catch one will run and take us to the error page
     try {
 
+        //Connecting to the database
         require('db.php');
 
+        //If studentid is empty than new data is being filled
         if (empty($studentId)) {
 
             $sql = "INSERT INTO academicss (courseName, studentNumber, name, work, grade, logo)
  
     VALUES (:courseName, :studentNumber, :name, :work, :grade, :logo)";
         }
+
+        //If studentid is not empty than data is updated
 
         else
             {
@@ -101,12 +112,7 @@ if($yes)
 
         }
 
-        /*if(!empty($logo))
-        {
-            "UPDATE from academicss SET logo = :logo WHERE studentId = :studentId";
-
-        }*/
-
+        //This stores evrything we put in the from into database
 
         $cmd = $db->prepare($sql);
         $cmd->bindParam(':courseName', $courseName, PDO::PARAM_STR, 100);
@@ -116,6 +122,7 @@ if($yes)
         $cmd->bindParam(':grade', $grade, PDO::PARAM_STR, 100);
         $cmd->bindParam(':logo', $logo, PDO::PARAM_STR, 255);
 
+        //If student id is not empty than previous studentid remains in there
         if (!empty($studentId)) {
             $cmd->bindParam(':studentId', $studentId, PDO::PARAM_INT);
 
@@ -125,12 +132,14 @@ if($yes)
         $cmd->execute();
 
 
-// disconnect from the database
+// disconnect database
         $db = null;
 
-
+    //This redirects the page to the ShowingRecord
         header('location:ShowingRecord.php');
     }
+
+    //This will run, when try is failed
     catch (Exception $e) {
         // send
         mail('kbanyal10@gmail.com', 'Academic Records', $e);

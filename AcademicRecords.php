@@ -1,11 +1,12 @@
 <?php
-$title = "Academic Details";
-require('Header.php');
-require('auth.php');
+$title = "Academic Details";//This gives the title of the page to Academic Details
+
+require('Header.php');//This includes the header
+require('auth.php');//This is for the authorization
 
 
 
-// initialize variables
+// initialize variables to null
 $courseName = null;
 $studentNumber = null;
 $name = null;
@@ -13,9 +14,11 @@ $work = null;
 $grade = null;
 $studentId = null;
 $logo = null;
-// was an existing Id passed to this page?  If so, select the matching record from the db
+
+//This runs when studentid is not empty
 
 if (!empty($_GET['studentId'])) {
+
     $studentId = $_GET['studentId'];
     // connect
     try {
@@ -26,17 +29,16 @@ if (!empty($_GET['studentId'])) {
         $cmd->bindParam(':studentId', $studentId, PDO::PARAM_INT);
         $cmd->execute();
         $x = $cmd->fetch();
-        // store each column value in a variable
+
         $courseName = $x['courseName'];
         $studentNumber = $x['studentNumber'];
         $name = $x['name'];
         $work = $x['work'];
         $grade = $x['grade'];
-
         $logo = $x['logo'];
 
 
-        // disconnect
+
         $db = null;
     }
     catch (Exception $e) {
@@ -52,7 +54,7 @@ if (!empty($_GET['studentId'])) {
 
 <h1>Student Details</h1>
 
-<link rel="stylesheet" href="css/bootstrap.min.css"/> <!--This is to bind it with bootstrap-->
+<link rel="stylesheet" href="css/bootstrap.min.css"/> <!--Connects with bootstrap-->
 <meta charset="UTF-8">
 
 
@@ -62,6 +64,7 @@ if (!empty($_GET['studentId'])) {
 
 <a href="ShowingRecord.php">Show Student Academics </a>
 <!--This is to give table some classes so that bootstrap can be applied on this and after submitting this will direct it to page AcademicInput.php-->
+
 <form method="post" action="AcademicInput.php" enctype="multipart/form-data">
     <!--Creating a Form -->
     <fieldset>
@@ -96,8 +99,10 @@ if (!empty($_GET['studentId'])) {
             $cmd->execute();
 
             //This will fetch the data from the table
+
             $academic = $cmd->fetchAll();
             //This will store the grade inputs and will show as a drop down
+
             foreach ($academic as $t) {
                 if ($t['grade'] == $grade) {
                     echo "<option selected> {$t['grade']} </option>";
@@ -111,15 +116,18 @@ if (!empty($_GET['studentId'])) {
             ?>
         </select>
     </fieldset>
+
     <fieldset>
         <label for="logo" class="col-md-1">Logo:</label>
         <input type="file" name="logo" id="logo" required value="<?php echo $logo; ?>"/>
     </fieldset>
+    }
 
     <div class="col-md-offset-1">
         <?php
         if (isset($logo)) {
-            echo "<img src=\"img/$logo\" alt=\"Logo\" />";
+            echo "<img src=\"img/$logo\" alt=\"Logo\" height=\"50px\" width=\"50px\" />";
+
         }
 
 

@@ -24,8 +24,9 @@
     the student information. But if you are not registered than you can only <br>
     see the information.This uses server side scripting and tus works on session. <br><br><br><br><br>
 
-    It's live link is <a href="http://aws.computerstudi.es/~gc200395834/ASSIGNMENT%20_%202/Homepage.php">http://aws.computerstudi.es/~gc200395834/ASSIGNMENT%20_%202/Homepage.php</a>.
+    It's live link is <a href="http://aws.computerstudi.es/~gc200395834/ASSIGNMENT%20_%202/Homepage.php">http://aws.computerstudi.es/~gc200395834/ASSIGNMENT%20_%202/Homepage.php</a>.</br>
 
+    And its code is on <a href="https://github.com/kbanyal10/Assignment-2-Intro-to-Web-Programming">https://github.com/kbanyal10/Assignment-2-Intro-to-Web-Programming</a>
 
 
 </div>

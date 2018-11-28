@@ -6,14 +6,14 @@ require('Header.php');
 
 if (isset($_SESSION['userid'])) {
 
-    echo '<a href="AcademicRecords.php">Add Student Record</a> ';
+    echo '<a href="AcademicRecords.php">Add Student Record</a> ';//This allows user to add a student record
 
 }
 ?>
 
 <h1>Academics</h1>
 
-<form method="get">
+<form method="get">//This is for the search
 
     <fieldset class="col-md-12 text-right">
 
@@ -26,7 +26,7 @@ if (isset($_SESSION['userid'])) {
 try{
             require('db.php');
 
-            $sql = "SELECT * FROM grade ORDER BY grade";
+            $sql = "SELECT * FROM grade ORDER BY grade";//This takes data from grades table
             $cmd = $db->prepare($sql);
             $cmd->execute();
             $types = $cmd->fetchAll();
@@ -102,7 +102,7 @@ try{
 
     $academicss = $cmd->fetchAll();
 
-    echo '<table class="table table-striped table-hover sortable"><thead><th>Course Name</th><th>Logo</th><th>Student Number</th><th>Name</th><th>Work</th>';
+    echo '<table class="table table-striped table-hover sortable"><thead><th>Course Name</th><th>Logo</th><th>Student Number</th><th>Name</th><th>Work</th><th>Grades</th>';
 
     if(isset($_SESSION['userid']))
     {
@@ -118,9 +118,10 @@ try{
         if (isset($r['logo']))
         {
             echo "<td><img src=\"img/{$r['logo']}\" alt=\"Logo\" height=\"50px\" width=\"50px\"/></td>";
+
         }
 
-        echo "<td> {$r['studentNumber']}</td><td>{$r['name']}</td><td>{$r['work']}</td>";
+        echo "<td> {$r['studentNumber']}</td><td>{$r['name']}</td><td>{$r['work']}</td><td>{$r['grade']}</td>";
 
         if (isset($_SESSION['userid']))
         {
