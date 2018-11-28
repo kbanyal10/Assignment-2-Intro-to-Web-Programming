@@ -13,7 +13,6 @@ $name = null;
 $work = null;
 $grade = null;
 $studentId = null;
-$logo = null;
 
 //This runs when studentid is not empty
 
@@ -119,8 +118,10 @@ if (!empty($_GET['studentId'])) {
 
     <fieldset>
         <label for="logo" class="col-md-1">Logo:</label>
-        <input type="file" name="logo" id="logo" required value="<?php echo $logo; ?>"/>
+        <input type="file" name="logo" id="logo"  value="<?php echo $logo; ?>"/>
     </fieldset>
+    <input type="hidden" name="logo" id="logo" value="<?php echo $logo; ?>"/>
+
     }
 
     <div class="col-md-offset-1">
