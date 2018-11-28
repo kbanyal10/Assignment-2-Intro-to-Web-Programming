@@ -123,7 +123,7 @@ if (!empty($_GET['studentId'])) {
     <fieldset>
         <label for="logo" class="col-md-1">Logo:</label>
         <input type="file" name="logo" id="logo"  value="<?php echo $logo; ?>"/>
-        <input type="hidden" name="logo" id="logo" value="<?php echo $logo; ?>"/>
+
     </fieldset>
 
 
