@@ -4,7 +4,7 @@ $title = "Login";
 require('Header.php');
 ?>
 
-<main class="container">
+<main class="container jumbotron">
 
     <h1>Log In</h1>
 

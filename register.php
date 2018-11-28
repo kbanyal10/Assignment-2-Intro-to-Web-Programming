@@ -7,13 +7,13 @@ require('Header.php');
 
 
 
-<main class="container">
+<main class="container jumbotron">
 
     <h1>User Registration</h1>
 
-    <div class="alert alert-info" id="message">Please create your account</div>
+    <div class="alert alert-info jumbotron" id="message">Please create your account
 
-    <form method="post" action="save-registration.php">//Register form
+    <form method="post" action="save-registration.php"><!--Register form-->
 
         <fieldset class="form-group">
 
@@ -40,9 +40,10 @@ require('Header.php');
         </div>
 
     </form>
+    </div>
 </main>
 
-//linking scripts
+<!--linking scripts-->
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 

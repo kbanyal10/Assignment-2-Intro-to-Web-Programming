@@ -60,10 +60,13 @@ if (!empty($_GET['studentId'])) {
 
 
 <!--This will show the student records by going on the ShowingRecord.php page -->
-
+<div class="jumbotron">
 <a href="ShowingRecord.php">Show Student Academics </a>
 <!--This is to give table some classes so that bootstrap can be applied on this and after submitting this will direct it to page AcademicInput.php-->
+    <script src="js/jquery-3.3.1.min.js"></script>
 
+
+    <script src="js/bootstrap.min.js"></script>
 <form method="post" action="AcademicInput.php" enctype="multipart/form-data">
     <!--Creating a Form -->
     <fieldset>
@@ -123,8 +126,10 @@ if (!empty($_GET['studentId'])) {
     <input type="hidden" name="logo" id="logo" value="<?php echo $logo; ?>"/>
 
     }
+</div>
 
-    <div class="col-md-offset-1">
+
+    <div class="col-md-offset-1 jumbotron">
         <?php
         if (isset($logo)) {
             echo "<img src=\"img/$logo\" alt=\"Logo\" height=\"50px\" width=\"50px\" />";
@@ -148,6 +153,7 @@ if (!empty($_GET['studentId'])) {
 
 
 </form>
+
 
 
 

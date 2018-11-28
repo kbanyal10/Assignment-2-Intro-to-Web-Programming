@@ -13,7 +13,8 @@ if (isset($_SESSION['userid'])) {
 
 <h1>Academics</h1>
 
-<form method="get">//This is for the search
+<form method="get">
+    <!--This is for the search-->
 
     <fieldset class="col-md-12 text-right">
 
