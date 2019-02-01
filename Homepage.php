@@ -26,7 +26,7 @@
 
     It's live link is <a href="http://aws.computerstudi.es/~gc200395834/ASSIGNMENT%20_%202/Homepage.php">http://aws.computerstudi.es/~gc200395834/ASSIGNMENT%20_%202/Homepage.php</a>.</br>
 
-    And its code is on <a href="https://github.com/kbanyal10/Assignment-2-Intro-to-Web-Programming">https://github.com/kbanyal10/Assignment-2-Intro-to-Web-Programming</a>
+    
 
 
 </div>
