@@ -9,4 +9,4 @@ see the information. This uses server-side scripting and thus works on the sessi
 
 
 
-Its live link ishttp://aws.computerstudi.es/~gc200395834/ASSIGNMENT2/Homepage.php
+Its live link is http://aws.computerstudi.es/~gc200395834/ASSIGNMENT2/Homepage.php
