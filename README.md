@@ -9,4 +9,5 @@ see the information. This uses server-side scripting and thus works on the sessi
 
 
 
-Its live link is http://aws.computerstudi.es/~gc200395834/ASSIGNMENT2/Homepage.php
+To see the website please run it in your local server.
+Thanks
